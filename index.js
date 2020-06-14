@@ -52,14 +52,14 @@ bot.on('ready', function(){
                 if(!error && data && data.statusCode == 200 )
                 {
                     bot.guilds.forEach(guild => {
-                        let pcn = "Players ["+JSON.parse(body).length + "/" + maxclients + "]";
-                        let sc = "Status [ON]";
+                        let playersON = "Players ["+JSON.parse(body).length + "/" + maxclients + "]";
+                        let statusON = "Status [ON]";
 
-                        if(guild.channels.find(c => c.id === "playersCountChannelID") !== pcn)
-                            bot.channels.get('playersCountChannelID').setName(pcn);
+                        if(guild.channels.find(c => c.id === "playersCountChannelID") !== playersON)
+                            bot.channels.get('playersCountChannelID').setName(playersON);
 
-                        if(guild.channels.find(c => c.id === "statusChannelID") !== sc)
-                            bot.channels.get('statusChannelID').setName(sc);
+                        if(guild.channels.find(c => c.id === "statusChannelID") !== statusON)
+                            bot.channels.get('statusChannelID').setName(statusON);
                     })
                 }
                 bot.guilds.forEach(guild => {
